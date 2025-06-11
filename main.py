@@ -25,7 +25,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 async def main():
-    client = TelegramClient('nour_trader', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
+    client = TelegramClient('nour_trader', API_ID, API_HASH)
+    await client.start(bot_token=BOT_TOKEN)  # <-- هنا التصحيح
 
     logger.info("Bot started successfully! Listening for messages...")
     print("Bot is running. Press Ctrl+C to stop.")
